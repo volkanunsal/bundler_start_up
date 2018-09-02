@@ -1,0 +1,23 @@
+current directory: /app/bundle/ruby/2.3.0/gems/clocale-0.0.4/ext/clocale
+/usr/local/bin/ruby -r ./siteconf20180902-7-ntixpo.rb extconf.rb
+checking for locale.h... yes
+checking for setlocale()... yes
+checking for strcoll()... yes
+checking for strxfrm()... yes
+creating Makefile
+
+current directory: /app/bundle/ruby/2.3.0/gems/clocale-0.0.4/ext/clocale
+make "DESTDIR=" clean
+
+current directory: /app/bundle/ruby/2.3.0/gems/clocale-0.0.4/ext/clocale
+make "DESTDIR="
+compiling clocale.c
+clocale.c: In function 'lc_setlocale':
+clocale.c:32:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   char* ret = setlocale(cat, loc);
+   ^~~~
+linking shared-object clocale/clocale.so
+
+current directory: /app/bundle/ruby/2.3.0/gems/clocale-0.0.4/ext/clocale
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 clocale.so ./.gem.20180902-7-1i06k8d/clocale

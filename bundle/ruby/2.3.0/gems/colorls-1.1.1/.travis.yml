@@ -1,0 +1,43 @@
+language:
+  ruby
+
+rvm:
+  - '2.1'
+  - '2.2'
+  - '2.3.0'
+  - '2.4.0'
+  - '2.5.0'
+
+script:
+  - bundle exec rubocop
+  - bundle exec rspec
+  - rake install
+  - colorls
+  - colorls -1
+  - colorls -a
+  - colorls -A
+  - colorls -d
+  - colorls -f
+  - colorls -l
+  - colorls -l spec/fixtures/symlinks
+  - ( cd spec/fixtures ; colorls .hidden-file ) | fgrep '.hidden-file'
+  - colorls -l README.md
+  - colorls -r
+  - colorls --sd
+  - colorls --sf
+  - colorls -t
+  - colorls --sort=time
+  - colorls -U
+  - colorls --sort=none
+  - colorls -S
+  - colorls --sort=size
+  - colorls -h
+  - colorls --gs
+  - colorls spec/fixtures/symlinks
+  - colorls README.md
+  - colorls *
+  - colorls | grep /
+
+install:
+  - gem install bundler
+  - bundle install
